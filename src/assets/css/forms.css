@@ -1,0 +1,55 @@
+.formttl {
+    font-size: 20px;
+    color: #4caf50;
+    margin: 0 0 20px;
+}
+
+form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 10px;
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+    background-color: #fff;
+}
+
+form .formGrp {
+    margin: 0 0 10px;
+}
+
+.form_Submit {
+    text-align: right;
+    width: 100%;
+}
+
+.form_Submit input[type="submit"] {
+    border: 1px solid #cecece;
+    border-radius: 6px;
+    outline: none;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 100px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+form .msg {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+    text-align: center;
+}
+
+form .msg a {
+    color: #4caf50;
+}

@@ -1,5 +1,5 @@
 import {React} from 'react';
-import adminImg from '../images/user.jpg';
+import adminImg from '../assets/images/user.jpg';
 
 const DashboardHeader = () => {
     return(

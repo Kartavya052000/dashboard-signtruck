@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
-import DashboardHeader from "./assets/components/dashboardHeader";
-import DashboardFooter from "./assets/components/dashboardFooter";
-import DashboardSidebar from "./assets/components/dashboardSideBar";
+import DashboardHeader from "./components/dashboardHeader";
+import DashboardFooter from "./components/dashboardFooter";
+import DashboardSidebar from "./components/dashboardSideBar";
 import Dashboard from "./dashboard";
 import Users from "./users";
 import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
 import { formlabelControl } from "./formControl";
+import Login from "./pages/login";
+
 
 function App() {
   return (
