@@ -1,10 +1,66 @@
 @import url(./assets/css/dashboard.css);
 @import url(./assets/css/login.css);
 @import url(./assets/css/forms.css);
+@import url(./assets/css/cards.css);
+@import url(./assets/css/basics.css);
 
 a,a:active,a:visited {
     text-decoration: none;
     color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+ul, ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.sec_ttl {
+    margin: 0 0 30px;
+}
+
+.dflex {
+    display: flex;
+    display: -ms-flexbox;
+}
+
+.dash_innerWrapper {
+    padding: 20px;
+    margin: 15px;
+}
+
+.nav_sec .cst_card {
+    max-width: 30rem;
+}
+
+.manage_Form .formLabel_list li {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 15px;
+    gap: 10px;
+}
+
+.manage_Form .formLabel_list li input {
+    margin: 0 !important;
+}
+
+.manage_Form .radContainer {
+    width: 50%;
+}
+
+.manage_Form .radContainer label {
+    margin: 0 10px;
+}
+
+.manage_Form .radContainer input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px !important;
 }
 
 .footer {

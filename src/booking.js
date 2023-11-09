@@ -60,44 +60,49 @@ export default function Booking() {
        
       }, [])
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Username</StyledTableCell>
-            <StyledTableCell align="right">Email</StyledTableCell>
-            <StyledTableCell align="right">Phone</StyledTableCell>
-            <StyledTableCell align="right">Website</StyledTableCell>
-            <StyledTableCell align="right">Side</StyledTableCell>
-            <StyledTableCell align="right">Days</StyledTableCell>
-            <StyledTableCell align="right">Duration</StyledTableCell>
-            <StyledTableCell align="right">Have Design</StyledTableCell>
-            <StyledTableCell align="right">Design Image</StyledTableCell>
-            <StyledTableCell align="right">Available Location</StyledTableCell>
-            <StyledTableCell align="right">Preferred Location</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {bookingdata.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              {/* <StyledTableCell align="right">{row.username}</StyledTableCell> */}
-              <StyledTableCell align="right">{row.email}</StyledTableCell>
-              <StyledTableCell align="right">{row.phone}</StyledTableCell>
-              <StyledTableCell align="right">{row.website}</StyledTableCell>
-              <StyledTableCell align="right">{row.truckData}</StyledTableCell>
-              <StyledTableCell align="right">{row.day}</StyledTableCell>
-              <StyledTableCell align="right">{row.dateRange}</StyledTableCell>
-              <StyledTableCell align="right">{row.radioList}</StyledTableCell>
-              <StyledTableCell align="right">{row.image}</StyledTableCell>
-              <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
-              <StyledTableCell align="right">{row.location}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      <div className='sec_ttl'>
+        <h2>Bookings</h2>
+      </div>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Username</StyledTableCell>
+              <StyledTableCell align="right">Email</StyledTableCell>
+              <StyledTableCell align="right">Phone</StyledTableCell>
+              <StyledTableCell align="right">Website</StyledTableCell>
+              <StyledTableCell align="right">Side</StyledTableCell>
+              <StyledTableCell align="right">Days</StyledTableCell>
+              <StyledTableCell align="right">Duration</StyledTableCell>
+              <StyledTableCell align="right">Have Design</StyledTableCell>
+              <StyledTableCell align="right">Design Image</StyledTableCell>
+              <StyledTableCell align="right">Available Location</StyledTableCell>
+              <StyledTableCell align="right">Preferred Location</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {bookingdata.map((row) => (
+              <StyledTableRow key={row.name}>
+                <StyledTableCell component="th" scope="row">
+                  {row.name}
+                </StyledTableCell>
+                {/* <StyledTableCell align="right">{row.username}</StyledTableCell> */}
+                <StyledTableCell align="right">{row.email}</StyledTableCell>
+                <StyledTableCell align="right">{row.phone}</StyledTableCell>
+                <StyledTableCell align="right">{row.website}</StyledTableCell>
+                <StyledTableCell align="right">{row.truckData}</StyledTableCell>
+                <StyledTableCell align="right">{row.day}</StyledTableCell>
+                <StyledTableCell align="right">{row.dateRange}</StyledTableCell>
+                <StyledTableCell align="right">{row.radioList}</StyledTableCell>
+                <StyledTableCell align="right">{row.image}</StyledTableCell>
+                <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
+                <StyledTableCell align="right">{row.location}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 }

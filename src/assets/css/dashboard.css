@@ -53,11 +53,12 @@ main {
 }
 
 .main-menu {
-	overflow: hidden;
-	background: rgb(73, 57, 113);
-	padding-top: 10px;
-	border-radius: 15px 0 0 15px;
-	/* font-family: "Roboto", sans-serif; */
+    overflow: hidden;
+    background: rgb(73, 57, 113);
+    padding-top: 10px;
+    border-radius: 15px 0 0 15px;
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 10px;
 }
 
 .main-menu h1 {
@@ -144,18 +145,28 @@ main {
 	background: rgb(254, 254, 254);
 }
 
+.nav-item.active .nav-icon {
+	color: #000;
+}
+
 .nav-icon {
-	width: 60px;
-	height: 20px;
-	font-size: 20px;
-	text-align: center;
+    width: 60px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
 }
 
 .nav-text {
 	display: block;
 	width: 120px;
 	height: 20px;
+	color: #fff;
 	font-family: "Mulish", sans-serif;
+}
+
+.nav-item.active .nav-text {
+	color: #000;
 }
 
 /* CONTENT */
@@ -286,6 +297,10 @@ main {
 	margin-top: 10px;
 }
 
+.calendar .btn  {
+	margin: 10px auto;
+}
+
 .day-and-activity {
 	display: grid;
 	grid-template-columns: 15% 60% 25%;
@@ -373,46 +388,6 @@ main {
 	font-size: 1.25rem;
 	font-weight: 600;
 	border-radius: 12px;
-}
-
-.btn {
-	display: block;
-	padding: 8px 24px;
-	margin: 10px auto;
-	font-size: 1.1rem;
-	font-weight: 500;
-	outline: none;
-	text-decoration: none;
-	color: #484b57;
-	background: rgba(255, 255, 255, 0.9);
-	box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-radius: 25px;
-	cursor: pointer;
-}
-
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn:visited {
-	transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-	animation: gelatine 0.5s 1;
-}
-
-@keyframes gelatine {
-	0%,
-	100% {
-		transform: scale(1, 1);
-	}
-	25% {
-		transform: scale(0.9, 1.1);
-	}
-	50% {
-		transform: scale(1.1, 0.9);
-	}
-	75% {
-		transform: scale(0.95, 1.05);
-	}
 }
 
 /* PERSONAL BESTS */

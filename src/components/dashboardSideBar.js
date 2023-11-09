@@ -20,30 +20,26 @@ const DashboardSidebar = () => {
             title: "Bookings",
             fa_icon : "fa-calendar-check"
         },
-        ,
         {
             href: "/bookings",
             title: "Guest Emails",
-            fa_icon : "fa-calendar-check"
-        } ,
+            fa_icon : "fa-envelope"
+        },
         {
             href: "/contact",
             title: "Contact",
             fa_icon : "fa-calendar-check"
-        } ,
+        },
         {
             href: "/navigation",
             title: "Navigation",
-            fa_icon : "fa-calendar-check"
-        }
-        ,
-        ,
+            fa_icon : "fa-map-marker"
+        },
         {
             href: "/form-control",
             title: "Form Control",
-            fa_icon : "fa-calendar-check"
+            fa_icon : "fa-wpforms"
         }
-        ,
     ];
 
     const [active, setActive] = useState(false);
@@ -58,8 +54,9 @@ const DashboardSidebar = () => {
                         <li className={`nav-item ${active == i ?'active' : ''}`}>
                             <b></b>
                             <b></b>
-                        <NavLink to={item.href} title={item.title} onClick={() => setActive(i)}
-                        ><i className={`fa nav-icon ${item.fa_icon}`}></i><span className="nav-text">{item.title}</span></NavLink>
+                            <NavLink to={item.href} title={item.title} onClick={() => setActive(i)}>
+                                <i className={`fa nav-icon ${item.fa_icon}`}></i><span className="nav-text">{item.title}</span>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>

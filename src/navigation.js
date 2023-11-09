@@ -27,13 +27,24 @@ export default function Navigation() {
       }, [])
     return(
         <>
-        <h1>Navigation</h1>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
+          <div className='sec_ttl'>
+            <h2>Navigation Menu</h2>
+          </div>
+          <div className='nav_sec'>
+            <div className='cst_card'>
+              <div className='cst_cardBody'>
+                <ul>
+                  <li><input type="text" placeholder='Home' /></li>
+                  <li><input type="text" placeholder='Faq' /></li>
+                  <li><input type="text" placeholder='Clients' /></li>
+                  <li><input type="text" placeholder='Contact Us' /></li>
+                  <li><input type="text" placeholder='Prospectus' /></li>
+                  <li><input type="text" placeholder='Booking' /></li>
+                  <li><button type="submit" className='btn btn_success'>Save</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </>
     )
 }
