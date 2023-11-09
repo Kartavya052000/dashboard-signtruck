@@ -8,6 +8,7 @@ import Users from "./users";
 import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
+import { formlabelControl } from "./formControl";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
                 <Route exact path='/bookings' element={<Booking />} />
                 <Route exact path='/navigation' element={<Navigation />} />
                 <Route exact path='/contact' element={<Contact />} />
+                <Route exact path='/form-control' element={<formlabelControl />} />
+                
+
                 {/* <Route exact path='faq' element={<Faq />} /> */}
               </Routes>
               <DashboardFooter />

@@ -37,7 +37,13 @@ const DashboardSidebar = () => {
             fa_icon : "fa-calendar-check"
         }
         ,
-        
+        ,
+        {
+            href: "/form-control",
+            title: "Form Control",
+            fa_icon : "fa-calendar-check"
+        }
+        ,
     ];
 
     const [active, setActive] = useState(false);
