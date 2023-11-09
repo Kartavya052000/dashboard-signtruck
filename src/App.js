@@ -4,6 +4,10 @@ import DashboardHeader from "./assets/components/dashboardHeader";
 import DashboardFooter from "./assets/components/dashboardFooter";
 import DashboardSidebar from "./assets/components/dashboardSideBar";
 import Dashboard from "./dashboard";
+import Users from "./users";
+import Booking from "./booking";
+import Navigation from "./navigation";
+import Contact from "./contact";
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
               <DashboardHeader />
               <Routes>
                 <Route exact path='/' element={<Dashboard />} />
+                <Route exact path='/users' element={<Users />} />
+                <Route exact path='/bookings' element={<Booking />} />
+                <Route exact path='/navigation' element={<Navigation />} />
+                <Route exact path='/contact' element={<Contact />} />
                 {/* <Route exact path='faq' element={<Faq />} /> */}
               </Routes>
               <DashboardFooter />

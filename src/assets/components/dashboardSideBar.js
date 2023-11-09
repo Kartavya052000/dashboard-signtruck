@@ -19,7 +19,25 @@ const DashboardSidebar = () => {
             href: "/bookings",
             title: "Bookings",
             fa_icon : "fa-calendar-check"
+        },
+        ,
+        {
+            href: "/bookings",
+            title: "Guest Emails",
+            fa_icon : "fa-calendar-check"
+        } ,
+        {
+            href: "/contact",
+            title: "Contact",
+            fa_icon : "fa-calendar-check"
+        } ,
+        {
+            href: "/navigation",
+            title: "Navigation",
+            fa_icon : "fa-calendar-check"
         }
+        ,
+        
     ];
 
     const [active, setActive] = useState(false);
