@@ -1,0 +1,95 @@
+.btn {
+	display: block;
+	padding: 8px 24px;
+	margin: 10px 0;
+	font-size: 1.1rem;
+	font-weight: 500;
+	outline: none;
+	text-decoration: none;
+	color: #484b57;
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:visited {
+	transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+	animation: gelatine 0.5s 1;
+}
+
+.btn_success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn_success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn_primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn_primary:hover {
+    background-color: #0069d9;
+    border-color: #0069d9;
+}
+
+.btn_danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn_danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.btn_info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn_info:hover {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+@keyframes gelatine {
+	0%,
+	100% {
+		transform: scale(1, 1);
+	}
+	25% {
+		transform: scale(0.9, 1.1);
+	}
+	50% {
+		transform: scale(1.1, 0.9);
+	}
+	75% {
+		transform: scale(0.95, 1.05);
+	}
+}
+
+.editBtn {
+    background-color: #28a745;
+    color: #fff;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+}

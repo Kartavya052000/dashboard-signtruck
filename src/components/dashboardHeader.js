@@ -10,7 +10,7 @@ const DashboardHeader = () => {
                     <i className="fa fa-bell nav-icon"></i>
                     <i className="fa fa-envelope nav-icon"></i>
                 </div>
-                <h4>Kelsey Miller</h4>
+                <h4>Hi, Admin</h4>
                 <img src={adminImg} alt="Admin" />
             </div>
         </>

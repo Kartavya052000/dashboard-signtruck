@@ -8,8 +8,7 @@ import Users from "./users";
 import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
-import { formlabelControl } from "./formControl";
-import Login from "./pages/login";
+import FormComponentsControl from "./pages/formcompcontrol";
 
 
 function App() {
@@ -20,17 +19,19 @@ function App() {
             <DashboardSidebar />
             <section className='content'>
               <DashboardHeader />
-              <Routes>
-                <Route exact path='/' element={<Dashboard />} />
-                <Route exact path='/users' element={<Users />} />
-                <Route exact path='/bookings' element={<Booking />} />
-                <Route exact path='/navigation' element={<Navigation />} />
-                <Route exact path='/contact' element={<Contact />} />
-                <Route exact path='/form-control' element={<formlabelControl />} />
-                
+              <div className="dash_innerWrapper">
+                <Routes>
+                  <Route exact path='/' element={<Dashboard />} />
+                  <Route exact path='/users' element={<Users />} />
+                  <Route exact path='/bookings' element={<Booking />} />
+                  <Route exact path='/navigation' element={<Navigation />} />
+                  <Route exact path='/contact' element={<Contact />} />
+                  <Route exact path='/form-control' element={<FormComponentsControl />} />
+                  
 
-                {/* <Route exact path='faq' element={<Faq />} /> */}
-              </Routes>
+                  {/* <Route exact path='faq' element={<Faq />} /> */}
+                </Routes>
+              </div>
               <DashboardFooter />
             </section>
           </Router>
