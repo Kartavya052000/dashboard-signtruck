@@ -1,39 +1,137 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Axios from 'axios';
 
 
 
 export default function Navigation() {
     const [nav, setNav] = useState([]); // Declare and initialize state within the function component
-
+    const [navbar, SetNavbar] = useState({
+        nav1: "",
+        nav2: "",
+        nav3: "",
+        nav4: "",
+        nav5: "",
+        nav6: "",
+    })
     useEffect(() => {
         // Define the API endpoint URL
         const apiUrl = 'http://localhost:4000/get-navbar';
         // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-navbar';
         Axios.get(apiUrl)
-        .then((response) => {
-          // Handle the successful response and update the state with the data
-          setNav(response.data.nav);
-          console.log(nav,"NAV")
-        })
-        .catch((error) => {
-          // Handle errors, e.g., show an error message
-          console.error('Error fetching data:', error);
-        });
-        
-    
+            .then((response) => {
+                // Handle the successful response and update the state with the data
+                setNav(response.data.nav);
+                const { nav1, nav2, nav3, nav4, nav5, nav6 } = response.data.nav[0];
+      SetNavbar({
+        nav1: nav1 || "",
+        nav2: nav2 || "",
+        nav3: nav3 || "",
+        nav4: nav4 || "",
+        nav5: nav5 || "",
+        nav6: nav6 || "",
+      });
+      console.log(navbar, "NAV");
+            })
+            .catch((error) => {
+                // Handle errors, e.g., show an error message
+                console.error('Error fetching data:', error);
+            });
+
+
         // Make a GET request to fetch data
-       
-      }, [])
-    return(
+
+    }, [])
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        // console.group(navbar)
+        // return
+         
+          try {
+           
+        
+            
+      const apiUrl = 'http://localhost:4000/update-navbar';
+      // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/update-navba';
+              // Then, send the formData with axios
+              const response = await Axios.post(apiUrl,navbar, {
+                  
+              });
+      
+              const { success, message } = response.data;
+              if (success) {
+      
+                //   handleSuccess(message);
+                  setTimeout(() => {
+                      // navigate("/");
+                  }, 1000);
+              } else {
+                  console.log(response.data, "SSSS");
+                  // alert(message);
+                //   handleError(message);
+              }
+      
+          } catch (error) {
+            //   handleError();
+      
+              console.error('API request failed', error);
+          }
+      };
+    return (
         <>
-        <h1>Navigation</h1>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
+            <h1>Navigation</h1>
+            <form onSubmit={handleSubmit}>
+  <input
+    type="text"
+    value={navbar.nav1}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav1: event.target.value }))
+    }
+  />
+  <input
+    type="text"
+    value={navbar.nav2}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav2: event.target.value }))
+    }
+  />
+  <input
+    type="text"
+    value={navbar.nav3}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav3: event.target.value }))
+    }
+  />
+  <input
+    type="text"
+    value={navbar.nav4}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav4: event.target.value }))
+    }
+  />
+  <input
+    type="text"
+    value={navbar.nav5}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav5: event.target.value }))
+    }
+  />
+  <input
+    type="text"
+    value={navbar.nav6}
+    required
+    onChange={(event) =>
+      SetNavbar((prevNavbar) => ({ ...prevNavbar, nav6: event.target.value }))
+    }
+  />
+
+  <button type="submit">Save</button>
+</form>
+
         </>
     )
 }
