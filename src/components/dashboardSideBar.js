@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import fit from '../images/fit.png';
+import fit from '../assets/images/fit.png';
 import { NavLink } from 'react-router-dom';
 
 const DashboardSidebar = () => {

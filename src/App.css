@@ -1,4 +1,11 @@
 @import url(./assets/css/dashboard.css);
+@import url(./assets/css/login.css);
+@import url(./assets/css/forms.css);
+
+a,a:active,a:visited {
+    text-decoration: none;
+    color: #000;
+}
 
 .footer {
     padding: 20px;
