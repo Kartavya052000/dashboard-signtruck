@@ -1,8 +1,17 @@
 .login_sec {
     background: #76b852;
     background-image: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+}
+
+.login_inner {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: center;
     padding: 3rem 0;
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .loginForm {
@@ -10,6 +19,6 @@
     width: 380px;
     margin: 20px auto;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 50px 0 50px 0;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }

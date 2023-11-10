@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import adminImg from '../assets/images/user.jpg';
+import adminImg from '../assets/images/usericon.png';
 import { useNavigate } from 'react-router-dom';
 
 const ProfileDropdown = () => {

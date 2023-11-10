@@ -41,8 +41,8 @@ export default function Booking() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        const apiUrl = 'http://localhost:4000/get-bookings';
-        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
+        // const apiUrl = 'http://localhost:4000/get-bookings';
+        const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data
@@ -69,26 +69,11 @@ export default function Booking() {
       <div className='sec_ttl'>
         <h2>Bookings</h2>
       </div>
-      <CsvDownloadButton
-    data={bookingdata}
-    filename="bookingdata.csv"
-    style={{ //pass other props, like styles
-      boxShadow:"inset 0px 1px 0px 0px #e184f3",
-      background:"linear-gradient(to bottom, #c123de 5%, #a20dbd 100%)",
-      backgroundColor:"#c123de",
-      borderRadius:"6px",
-      border:"1px solid #a511c0",
-      display:"inline-block",
-      cursor:"pointer","color":"#ffffff",
-      fontSize:"15px",
-      fontWeight:"bold",
-      padding:"6px 24px",
-      textDecoration:"none",
-      textShadow:"0px 1px 0px #9b14b3"
-      }}
-  >
-    Good Data ✨
-  </CsvDownloadButton>
+      <div className='textRight tableActionBtns'>
+        <CsvDownloadButton
+          data={bookingdata}
+          filename="bookingdata.csv" className='btn btn_info btn_sm'>Export CSV</CsvDownloadButton>
+        </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
@@ -110,15 +95,15 @@ export default function Booking() {
           <TableBody>
             {bookingdata.map((row) => (
               <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
+                <StyledTableCell width="50%" component="th" scope="row">
                   {row.name}
                 </StyledTableCell>
                 {/* <StyledTableCell align="right">{row.username}</StyledTableCell> */}
-                <StyledTableCell align="right">{row.email}</StyledTableCell>
-                <StyledTableCell align="right">{row.phone}</StyledTableCell>
-                <StyledTableCell align="right">{row.website}</StyledTableCell>
-                <StyledTableCell align="right">{row.truckData}</StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell align="left">{row.email}</StyledTableCell>
+                <StyledTableCell align="left">{row.phone}</StyledTableCell>
+                <StyledTableCell align="left">{row.website}</StyledTableCell>
+                <StyledTableCell align="left">{row.truckData}</StyledTableCell>
+                <StyledTableCell align="left">
                   {/* Parse the string to an array and display each day */}
                   {JSON.parse(row.day).map((day, index) => (
         <span key={day}>
@@ -127,7 +112,7 @@ export default function Booking() {
         </span>
     ))}
                 </StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell align="left">
                   {/* Format each date in the date range */}
                   {JSON.parse(row.dateRange).map((date, index) => (
         <span key={date}>

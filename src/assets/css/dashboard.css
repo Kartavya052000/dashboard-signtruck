@@ -491,7 +491,7 @@ main {
 
 .user-info {
     display: grid;
-    grid-template-columns: 70% 10% 15% 5%;
+    grid-template-columns: 80% 20%;
     align-items: center;
     padding: 10px;
     margin-bottom: 30px;

@@ -1,8 +1,12 @@
+.textRight {
+    text-align: right;
+}
+
 .btn {
 	display: block;
-	padding: 8px 24px;
+	padding: 8px 18px;
 	margin: 10px 0;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 500;
 	outline: none;
 	text-decoration: none;
@@ -20,6 +24,11 @@
 .btn:visited {
 	transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
 	animation: gelatine 0.5s 1;
+}
+
+.btn_sm {
+    font-size: 0.8rem;
+    padding: 8px 10px;
 }
 
 .btn_success {
@@ -126,9 +135,8 @@
 
 .profileDropdown .profile .imgBox {
     position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 22px;
+    height: 22px;
     overflow: hidden;
 }
 
@@ -144,7 +152,7 @@
 .profileDropdown .menu {
     position: absolute;
     top: calc(100% + 24px);
-    right: 10px;
+    right: 0;
     width: 200px;
     min-height: 90px;
     background: #fff;

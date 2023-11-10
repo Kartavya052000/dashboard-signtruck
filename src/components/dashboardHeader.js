@@ -6,10 +6,10 @@ const DashboardHeader = () => {
         <>
             <div className="user-info">
                 <div className="blank_container"></div>
-                <div className="icon-container">
+                {/* <div className="icon-container">
                     <i className="fa fa-bell nav-icon"></i>
                     <i className="fa fa-envelope nav-icon"></i>
-                </div>
+                </div> */}
                 <ProfileDropdown />
             </div>
         </>

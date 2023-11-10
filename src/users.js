@@ -54,8 +54,8 @@ export default function Users() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        const apiUrl = 'http://localhost:4000/users';
-        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/users';
+        // const apiUrl = 'http://localhost:4000/users';
+        const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/users';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data
@@ -84,7 +84,7 @@ export default function Users() {
           <TableHead>
             <TableRow>
               <StyledTableCell>Username</StyledTableCell>
-              <StyledTableCell align="right">Email</StyledTableCell>
+              <StyledTableCell align="left">Email</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -93,8 +93,8 @@ export default function Users() {
                 {/* <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell> */}
-                <StyledTableCell align="right">{row.username}</StyledTableCell>
-                <StyledTableCell align="right">{row.email}</StyledTableCell>
+                <StyledTableCell align="left">{row.username}</StyledTableCell>
+                <StyledTableCell align="left">{row.email}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
