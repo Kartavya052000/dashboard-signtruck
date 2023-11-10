@@ -12,7 +12,7 @@ import Axios from 'axios';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.success.light,
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
