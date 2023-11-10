@@ -11,7 +11,6 @@ import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
 import Login from "./pages/login";
 import Guest from "./guest";
-import Login from "./pages/login";
 
 
 function App() {
