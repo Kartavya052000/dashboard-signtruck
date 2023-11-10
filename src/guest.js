@@ -84,7 +84,7 @@ export default function Guest() {
           <TableHead>
             <TableRow>
               <StyledTableCell>Username</StyledTableCell>
-              <StyledTableCell align="right">Email</StyledTableCell>
+              <StyledTableCell align="left">Email</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -93,8 +93,8 @@ export default function Guest() {
                 {/* <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell> */}
-                <StyledTableCell align="right">{row.name}</StyledTableCell>
-                <StyledTableCell align="right">{row.email}</StyledTableCell>
+                <StyledTableCell align="left">{row.name}</StyledTableCell>
+                <StyledTableCell align="left">{row.email}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

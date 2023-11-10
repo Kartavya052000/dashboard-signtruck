@@ -16,7 +16,7 @@ const Login = () => {
                                     <input type='password' placeholder='Password' />
                                 </div>
                                 <div className='form_Submit'>
-                                    <input type='submit' value='Login' />
+                                    <input type='submit' value='Login' className='btn btn_success btn_sm' />
                                 </div>
                                 <div class="msg">Not registered? <a href="#">Create an account</a></div>
                             </form>
