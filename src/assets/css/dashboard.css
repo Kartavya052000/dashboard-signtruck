@@ -153,6 +153,7 @@ main {
 
 .user-info .nav-icon {
 	color: #4caf50;
+	cursor: pointer;
 }
 
 .nav-icon {
@@ -502,16 +503,6 @@ main {
 	gap: 15px;
 }
 
-.user-info h4 {
-	margin-left: 40px;
-}
-
-.user-info img {
-	width: 40px;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-}
-
 /* ACTIVE CALORIES  */
 
 .active-calories {
@@ -677,7 +668,7 @@ main {
 	.logo {
 		display: block;
 		width: 30px;
-		margin: 20px auto;
+		margin: 15px auto;
 	}
 
 	.nav-text {

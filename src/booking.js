@@ -79,6 +79,7 @@ export default function Booking() {
               <StyledTableCell align="right">Design Image</StyledTableCell>
               <StyledTableCell align="right">Available Location</StyledTableCell>
               <StyledTableCell align="right">Preferred Location</StyledTableCell>
+              <StyledTableCell align="right">Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -98,6 +99,7 @@ export default function Booking() {
                 <StyledTableCell align="right">{row.image}</StyledTableCell>
                 <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
                 <StyledTableCell align="right">{row.location}</StyledTableCell>
+                <StyledTableCell align="right"><button type='button' className='actionBtn btn_info'><i className='fa fa-eye'></i></button></StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

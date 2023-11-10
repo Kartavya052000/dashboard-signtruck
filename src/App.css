@@ -34,6 +34,7 @@ ul, ul li {
 
 .nav_sec .cst_card {
     max-width: 30rem;
+    margin: 0 auto;
 }
 
 .manage_Form .formLabel_list li {
