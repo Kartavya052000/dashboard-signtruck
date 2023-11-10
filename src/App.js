@@ -9,12 +9,13 @@ import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
+import Guest from "./guest";
 
 
 function App() {
   return (
     <div className='App'>
-      <div className="wrapper">
+      <div className='wrapper'>
         <main>
             <Router>
               <DashboardSidebar />
@@ -28,9 +29,7 @@ function App() {
                     <Route exact path='/navigation' element={<Navigation />} />
                     <Route exact path='/contact' element={<Contact />} />
                     <Route exact path='/form-control' element={<FormComponentsControl />} />
-                    
-
-                    {/* <Route exact path='faq' element={<Faq />} /> */}
+                    <Route exact path='/guest' element={<Guest />} />
                   </Routes>
                 </div>
                 <DashboardFooter />

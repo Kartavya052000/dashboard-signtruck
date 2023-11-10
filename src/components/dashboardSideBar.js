@@ -21,7 +21,7 @@ const DashboardSidebar = () => {
             fa_icon : "fa-calendar-check"
         },
         {
-            href: "/bookings",
+            href: "/guest",
             title: "Guest Emails",
             fa_icon : "fa-envelope"
         },
