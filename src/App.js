@@ -10,6 +10,7 @@ import Navigation from "./navigation";
 import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
 import Guest from "./guest";
+import Login from "./pages/login";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
               <DashboardHeader />
               <div className="dash_innerWrapper">
                 <Routes>
-                  <Route exact path='/' element={<Dashboard />} />
+                  <Route exact path='/' element={<Login />} />
+                  <Route exact path='/dashboard' element={<Dashboard />} />
                   <Route exact path='/users' element={<Users />} />
                   <Route exact path='/bookings' element={<Booking />} />
                   <Route exact path='/navigation' element={<Navigation />} />
