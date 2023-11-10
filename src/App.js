@@ -11,9 +11,13 @@ import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
 import Login from "./pages/login";
 import Guest from "./guest";
+import BookingDetails from './bookingdetails';
 
 
 function App() {
+
+  const loginacess = window.location.pathname;
+  console.log(loginacess,"LLLL");
   return (
     <div className='App'>
       <Router>
@@ -21,28 +25,33 @@ function App() {
           <Route exact path='/' element={<Login />} />
         </Routes>
       </Router>
-      <div className='wrapper'>
-        <main>
-            <Router>
-              <DashboardSidebar />
-              <section className='content'>
-                <DashboardHeader />
-                <div className="dash_innerWrapper">
-                  <Routes>
-                    <Route exact path='/dashboard' element={<Dashboard />} />
-                    <Route exact path='/users' element={<Users />} />
-                    <Route exact path='/bookings' element={<Booking />} />
-                    <Route exact path='/navigation' element={<Navigation />} />
-                    <Route exact path='/contact' element={<Contact />} />
-                    <Route exact path='/form-control' element={<FormComponentsControl />} />
-                    <Route exact path='/guest' element={<Guest />} />
-                  </Routes>
-                </div>
-                <DashboardFooter />
-              </section>
-            </Router>
-        </main>
-      </div>
+      {loginacess !='/'?
+       <div className='wrapper'>
+       <main>
+           <Router>
+             <DashboardSidebar />
+             <section className='content'>
+               <DashboardHeader />
+               <div className="dash_innerWrapper">
+                 <Routes>
+                   <Route exact path='/dashboard' element={<Dashboard />} />
+                   <Route exact path='/users' element={<Users />} />
+                   <Route exact path='/bookings' element={<Booking />} />
+                   <Route exact path='/navigation' element={<Navigation />} />
+                   <Route exact path='/contact' element={<Contact />} />
+                   <Route exact path='/form-control' element={<FormComponentsControl />} />
+                   <Route exact path='/guest' element={<Guest />} />
+                   <Route exact path='/booking-details' element={< BookingDetails/>} />
+                 </Routes>
+               </div>
+               <DashboardFooter />
+             </section>
+           </Router>
+       </main>
+     </div>:(
+      <></>
+     )}
+     
     </div>
   );
 }

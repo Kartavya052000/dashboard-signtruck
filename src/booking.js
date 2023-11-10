@@ -61,6 +61,9 @@ export default function Booking() {
         // Make a GET request to fetch data
        
       }, [])
+      const BookingDetails = () =>{
+        window.location.href ='/booking-details'
+      }
   return (
     <>
       <div className='sec_ttl'>
@@ -97,7 +100,7 @@ export default function Booking() {
               <StyledTableCell align="right">Side</StyledTableCell>
               <StyledTableCell align="right">Days</StyledTableCell>
               <StyledTableCell align="right">Duration</StyledTableCell>
-              <StyledTableCell align="right">Have Design</StyledTableCell>
+              {/* <StyledTableCell align="right">Have Design</StyledTableCell> */}
               <StyledTableCell align="right">Design Image</StyledTableCell>
               <StyledTableCell align="right">Available Location</StyledTableCell>
               <StyledTableCell align="right">Preferred Location</StyledTableCell>
@@ -117,20 +120,24 @@ export default function Booking() {
                 <StyledTableCell align="right">{row.truckData}</StyledTableCell>
                 <StyledTableCell align="right">
                   {/* Parse the string to an array and display each day */}
-                  {JSON.parse(row.day).map((day) => (
-                    <span key={day}>{day}, </span>
-                  ))}
+                  {JSON.parse(row.day).map((day, index) => (
+        <span key={day}>
+            {day}
+            {index < JSON.parse(row.day).length - 1 && ','}{' '}
+        </span>
+    ))}
                 </StyledTableCell>
                 <StyledTableCell align="right">
                   {/* Format each date in the date range */}
-                  {JSON.parse(row.dateRange).map((date) => (
-                    <span key={date}>
-                      {new Date(date).toLocaleDateString()},{''}
-                    </span>
-                  ))}
+                  {JSON.parse(row.dateRange).map((date, index) => (
+        <span key={date}>
+            {new Date(date).toLocaleDateString()}
+            {index < JSON.parse(row.dateRange).length - 1 && ','}{' '}
+        </span>
+    ))}
                 </StyledTableCell>
                 {/* <StyledTableCell align="right">{row.dateRange}</StyledTableCell> */}
-                <StyledTableCell align="right">{row.radioList}</StyledTableCell>
+                {/* <StyledTableCell align="right">{row.radioList =="B"?"Yes":"No"}</StyledTableCell> */}
                 <StyledTableCell align="right"> {row.image && (
                   <img
                     src={`http://localhost:4000/${row.image}`}
@@ -139,7 +146,9 @@ export default function Booking() {
                 )}</StyledTableCell>
                 <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
                 <StyledTableCell align="right">{row.location}</StyledTableCell>
-                <StyledTableCell align="right"><button type='button' className='actionBtn btn_info'><i className='fa fa-eye'></i></button></StyledTableCell>
+                {/* <StyledTableCell align="right"><button type='button' className='actionBtn btn_info' 
+    onClick={() => BookingDetails(row.id)}  
+    ><i className='fa fa-eye'></i></button></StyledTableCell> */}
               </StyledTableRow>
             ))}
           </TableBody>
