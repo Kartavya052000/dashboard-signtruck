@@ -14,28 +14,30 @@ import FormComponentsControl from "./pages/formcompcontrol";
 function App() {
   return (
     <div className='App'>
-      <main>
-          <Router>
-            <DashboardSidebar />
-            <section className='content'>
-              <DashboardHeader />
-              <div className="dash_innerWrapper">
-                <Routes>
-                  <Route exact path='/' element={<Dashboard />} />
-                  <Route exact path='/users' element={<Users />} />
-                  <Route exact path='/bookings' element={<Booking />} />
-                  <Route exact path='/navigation' element={<Navigation />} />
-                  <Route exact path='/contact' element={<Contact />} />
-                  <Route exact path='/form-control' element={<FormComponentsControl />} />
-                  
+      <div className="wrapper">
+        <main>
+            <Router>
+              <DashboardSidebar />
+              <section className='content'>
+                <DashboardHeader />
+                <div className="dash_innerWrapper">
+                  <Routes>
+                    <Route exact path='/' element={<Dashboard />} />
+                    <Route exact path='/users' element={<Users />} />
+                    <Route exact path='/bookings' element={<Booking />} />
+                    <Route exact path='/navigation' element={<Navigation />} />
+                    <Route exact path='/contact' element={<Contact />} />
+                    <Route exact path='/form-control' element={<FormComponentsControl />} />
+                    
 
-                  {/* <Route exact path='faq' element={<Faq />} /> */}
-                </Routes>
-              </div>
-              <DashboardFooter />
-            </section>
-          </Router>
-      </main>
+                    {/* <Route exact path='faq' element={<Faq />} /> */}
+                  </Routes>
+                </div>
+                <DashboardFooter />
+              </section>
+            </Router>
+        </main>
+      </div>
     </div>
   );
 }
