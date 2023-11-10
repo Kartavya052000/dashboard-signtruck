@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import DashboardHeader from "./components/dashboardHeader";
 import DashboardFooter from "./components/dashboardFooter";
@@ -9,12 +9,18 @@ import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
+import Login from "./pages/login";
 import Guest from "./guest";
 
 
 function App() {
   return (
     <div className='App'>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Login />} />
+        </Routes>
+      </Router>
       <div className='wrapper'>
         <main>
             <Router>
@@ -23,7 +29,7 @@ function App() {
                 <DashboardHeader />
                 <div className="dash_innerWrapper">
                   <Routes>
-                    <Route exact path='/' element={<Dashboard />} />
+                    <Route exact path='/dashboard' element={<Dashboard />} />
                     <Route exact path='/users' element={<Users />} />
                     <Route exact path='/bookings' element={<Booking />} />
                     <Route exact path='/navigation' element={<Navigation />} />
