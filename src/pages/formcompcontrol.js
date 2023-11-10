@@ -149,7 +149,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, name: event.target.value }))
                         }
                       />
-                      <input type='text' value='Name' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -157,7 +156,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.name}</label>
-                      <input type='text' value={form.name} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Name')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -176,7 +174,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, email: event.target.value }))
                         }
                       />
-                      <input type='email' value={form.email} disabled />
                       <button type='button' className='btn_danger actionBtn' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -184,7 +181,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.email}</label>
-                      <input type='text' value={form.email} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Email')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -203,7 +199,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, phone: event.target.value }))
                         }
                       />
-                      <input type='number' value='phone' disabled />
                       <button type='button' className='btn_danger actionBtn' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -211,7 +206,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.phone}</label>
-                      <input type='text' value={form.phone} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Phone')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -230,7 +224,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, website: event.target.value }))
                         }
                       />
-                      <input type='text' value={form.website} disabled />
                       <button type='button' className='btn_danger actionBtn' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -238,7 +231,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.website}</label>
-                      <input type='text' value={form.website} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Website')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -257,7 +249,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, truckData: event.target.value }))
                         }
                       />
-                      <input type='text' value='WhichSide' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -265,7 +256,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.truckData}</label>
-                      <input type='text' value={form.truckData} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('WhichSide')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -284,7 +274,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, day: event.target.value }))
                         }
                       />
-                      <input type='text' value={form.day} disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -292,7 +281,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.day}</label>
-                      <input type='text' value={form.day} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('NumberofDays')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -311,7 +299,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, dateRange: event.target.value }))
                         }
                       />
-                      <input type='text' value='How long on signtruck' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -319,7 +306,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.dateRange}</label>
-                      <input type='text' value={form.dateRange} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Howlongonsigntruck')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -338,7 +324,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, haveDesign: event.target.value }))
                         }
                       />
-                      <input type='text' value='How long on signtruck' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -346,7 +331,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.haveDesign}</label>
-                      <input type='text' value={form.haveDesign} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Doyouhaveanydesign')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -365,7 +349,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, availableLocation: event.target.value }))
                         }
                       />
-                      <input type='text' value='Available location' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -373,7 +356,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.availableLocation}</label>
-                      <input type='text' value={form.availableLocation} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Availablelocation')}>
                         <i className='fa fa-pencil'></i>
                       </button>
@@ -392,7 +374,6 @@ const FormComponentsControl = () => {
                             setForm((prevNavbar) => ({ ...prevNavbar, preferredLocation: event.target.value }))
                         }
                       />
-                      <input type='text' value='Available location' disabled />
                       <button type='button' className='actionBtn btn_danger' onClick={handleCancel}>
                         <i className='fa fa-times'></i>
                       </button>
@@ -400,7 +381,6 @@ const FormComponentsControl = () => {
                   ) : (
                     <>
                       <label>{form.preferredLocation}</label>
-                      <input type='text' value={form.preferredLocation} disabled />
                       <button type='button' className='actionBtn btn_success' onClick={() => handleEditClick('Preferredlocation')}>
                         <i className='fa fa-pencil'></i>
                       </button>
