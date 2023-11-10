@@ -4,7 +4,7 @@ import Axios from 'axios';
 
 
 export default function Navigation() {
-    const [nav, setNav] = useState([]); // Declare and initialize state within the function component
+    // const [nav, setNav] = useState([]); // Declare and initialize state within the function component
     const [navbar, SetNavbar] = useState({
         nav1: "",
         nav2: "",
@@ -20,7 +20,7 @@ export default function Navigation() {
         Axios.get(apiUrl)
             .then((response) => {
                 // Handle the successful response and update the state with the data
-                setNav(response.data.nav);
+                // setNav(response.data.nav);
                 const { nav1, nav2, nav3, nav4, nav5, nav6 } = response.data.nav[0];
                 SetNavbar({
                     nav1: nav1 || "",
@@ -43,13 +43,7 @@ export default function Navigation() {
     }, [])
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // console.group(navbar)
-        // return
-
         try {
-
-
-
             const apiUrl = 'http://localhost:4000/update-navbar';
             // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/update-navba';
             // Then, send the formData with axios
@@ -78,60 +72,6 @@ export default function Navigation() {
     };
     return (
         <>
-            <h1>Navigation</h1>
-            {/* <form >
-                <input
-                    type="text"
-                    value={navbar.nav1}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav1: event.target.value }))
-                    }
-                />
-                <input
-                    type="text"
-                    value={navbar.nav2}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav2: event.target.value }))
-                    }
-                />
-                <input
-                    type="text"
-                    value={navbar.nav3}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav3: event.target.value }))
-                    }
-                />
-                <input
-                    type="text"
-                    value={navbar.nav4}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav4: event.target.value }))
-                    }
-                />
-                <input
-                    type="text"
-                    value={navbar.nav5}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav5: event.target.value }))
-                    }
-                />
-                <input
-                    type="text"
-                    value={navbar.nav6}
-                    required
-                    onChange={(event) =>
-                        SetNavbar((prevNavbar) => ({ ...prevNavbar, nav6: event.target.value }))
-                    }
-                />
-
-                <button type="submit">Save</button>
-            </form> */}
-
             <div className='sec_ttl'>
                 <h2>Navigation Menu</h2>
             </div>

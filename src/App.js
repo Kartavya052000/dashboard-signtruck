@@ -9,6 +9,7 @@ import Booking from "./booking";
 import Navigation from "./navigation";
 import Contact from "./contact";
 import FormComponentsControl from "./pages/formcompcontrol";
+import Guest from "./guest";
 
 
 function App() {
@@ -27,8 +28,7 @@ function App() {
                   <Route exact path='/navigation' element={<Navigation />} />
                   <Route exact path='/contact' element={<Contact />} />
                   <Route exact path='/form-control' element={<FormComponentsControl />} />
-                  
-
+                  <Route exact path='/guest' element={<Guest />} />
                   {/* <Route exact path='faq' element={<Faq />} /> */}
                 </Routes>
               </div>
