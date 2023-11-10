@@ -8,6 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Axios from 'axios';
+import CsvDownloadButton from 'react-json-to-csv'
+
 // import { useNavigate } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -39,8 +41,8 @@ export default function Booking() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        // const apiUrl = 'http://localhost:4000/users';
-        const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
+        const apiUrl = 'http://localhost:4000/get-bookings';
+        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data
@@ -64,6 +66,26 @@ export default function Booking() {
       <div className='sec_ttl'>
         <h2>Bookings</h2>
       </div>
+      <CsvDownloadButton
+    data={bookingdata}
+    filename="bookingdata.csv"
+    style={{ //pass other props, like styles
+      boxShadow:"inset 0px 1px 0px 0px #e184f3",
+      background:"linear-gradient(to bottom, #c123de 5%, #a20dbd 100%)",
+      backgroundColor:"#c123de",
+      borderRadius:"6px",
+      border:"1px solid #a511c0",
+      display:"inline-block",
+      cursor:"pointer","color":"#ffffff",
+      fontSize:"15px",
+      fontWeight:"bold",
+      padding:"6px 24px",
+      textDecoration:"none",
+      textShadow:"0px 1px 0px #9b14b3"
+      }}
+  >
+    Good Data ✨
+  </CsvDownloadButton>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>

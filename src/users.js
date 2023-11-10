@@ -54,8 +54,8 @@ export default function Users() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        // const apiUrl = 'http://localhost:4000/users';
-        const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/users';
+        const apiUrl = 'http://localhost:4000/users';
+        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/users';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data

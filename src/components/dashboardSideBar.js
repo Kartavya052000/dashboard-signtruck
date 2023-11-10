@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 const DashboardSidebar = () => {
 
     const links = [
-        {
-            href: "/",
-            title: "Home",
-            fa_icon : "fa-house"
-        },
+        // {
+        //     href: "/",
+        //     title: "Home",
+        //     fa_icon : "fa-house"
+        // },
         {
             href: "/users",
             title: "Users",
