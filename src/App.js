@@ -24,7 +24,8 @@ function App() {
                 <DashboardHeader />
                 <div className="dash_innerWrapper">
                   <Routes>
-                    <Route exact path='/' element={<Dashboard />} />
+                    {/* <Route exact path='/' element={<Dashboard />} /> */}
+                    <Route exact path='/' element={<Login />} />
                     <Route exact path='/users' element={<Users />} />
                     <Route exact path='/bookings' element={<Booking />} />
                     <Route exact path='/navigation' element={<Navigation />} />

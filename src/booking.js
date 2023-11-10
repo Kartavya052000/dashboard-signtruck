@@ -115,10 +115,28 @@ export default function Booking() {
                 <StyledTableCell align="right">{row.phone}</StyledTableCell>
                 <StyledTableCell align="right">{row.website}</StyledTableCell>
                 <StyledTableCell align="right">{row.truckData}</StyledTableCell>
-                <StyledTableCell align="right">{row.day}</StyledTableCell>
-                <StyledTableCell align="right">{row.dateRange}</StyledTableCell>
+                <StyledTableCell align="right">
+                  {/* Parse the string to an array and display each day */}
+                  {JSON.parse(row.day).map((day) => (
+                    <span key={day}>{day}, </span>
+                  ))}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {/* Format each date in the date range */}
+                  {JSON.parse(row.dateRange).map((date) => (
+                    <span key={date}>
+                      {new Date(date).toLocaleDateString()},{''}
+                    </span>
+                  ))}
+                </StyledTableCell>
+                {/* <StyledTableCell align="right">{row.dateRange}</StyledTableCell> */}
                 <StyledTableCell align="right">{row.radioList}</StyledTableCell>
-                <StyledTableCell align="right">{row.image}</StyledTableCell>
+                <StyledTableCell align="right"> {row.image && (
+                  <img
+                    src={`http://localhost:4000/${row.image}`}
+                    alt={`Design for ${row.name}`}
+                    style={{ width: '50px', height: '50px' }} />
+                )}</StyledTableCell>
                 <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
                 <StyledTableCell align="right">{row.location}</StyledTableCell>
                 <StyledTableCell align="right"><button type='button' className='actionBtn btn_info'><i className='fa fa-eye'></i></button></StyledTableCell>
