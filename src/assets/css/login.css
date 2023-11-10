@@ -2,6 +2,7 @@
     background: #76b852;
     background-image: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
     padding: 3rem 0;
+    height: 100vh;
 }
 
 .loginForm {
