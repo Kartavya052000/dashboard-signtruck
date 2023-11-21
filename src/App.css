@@ -68,6 +68,12 @@ ul, ul li {
     display: inline-block;
 }
 
+span.error {
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+}
+
 .footer {
     padding: 20px;
     box-shadow: 0px -5px 10px rgba(0,0,0,0.1);

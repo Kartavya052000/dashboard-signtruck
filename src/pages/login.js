@@ -79,7 +79,7 @@ const Login = () => {
                     placeholder='Email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    style={{ border: emailError ? '1px solid red' : '1px solid #ccc' }}
+                    style={{ border: emailError ? '1px solid red' : '1px solid #ccc', marginBottom: emailError ? '0' : '' }}
                   />
                   {emailError && <span className='error'>{emailError}</span>}
                 </div>
@@ -89,7 +89,7 @@ const Login = () => {
                     placeholder='Password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    style={{ border: passwordError ? '1px solid red' : '1px solid #ccc' }}
+                    style={{ border: passwordError ? '1px solid red' : '1px solid #ccc', marginBottom: passwordError ? '0' : '' }}
                   />
                   {passwordError && <span className='error'>{passwordError}</span>}
                 </div>
