@@ -44,7 +44,9 @@ const FormComponentsControl = () => {
 
   useEffect(() => {
     // Define the API endpoint URL
-    const apiUrl = 'http://localhost:4000/get-forms';
+    // const apiUrl = 'http://localhost:4000/get-forms';
+    const apiUrl = 'https://signtruckapi.signtruck.ca/get-forms';
+
 
     Axios.get(apiUrl)
       .then((response) => {
@@ -94,7 +96,12 @@ const FormComponentsControl = () => {
     console.log('Saving form:', form);
 
     // Make a POST request to update the form data in the API
-    const apiUrl = 'http://localhost:4000/update-form';
+    // const apiUrl = 'http://localhost:4000/update-form';
+    // const apiUrl = 'http://160.153.49.101/update-form';
+    // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/update-form';
+    const apiUrl = 'https://signtruckapi.signtruck.ca/update-form';
+
+
 
     Axios.post(apiUrl, form)
       .then((response) => {

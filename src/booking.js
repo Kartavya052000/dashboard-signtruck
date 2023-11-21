@@ -38,19 +38,28 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function Booking() {
  
   const [bookingdata, setBookingData] = useState([]); // Declare and initialize state within the function component
+  const [exportdata, setexportdata] = useState([]); // Declare and initialize state within the function component
 
     useEffect(() => {
         // Define the API endpoint URL
         // const apiUrl = 'http://localhost:4000/get-bookings';
-        const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
+        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-bookings';
+        const apiUrl = 'https://signtruckapi.signtruck.ca/get-bookings';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data
           console.log(response.data,"DATA");
           setBookingData(response.data.bookings);
           const keys = Object.keys(response.data.bookings[0]);
+       
+          // setexportdata(rows)
+let y =bookingdata.map(({ _id, __v, ...rest }) => rest);
+
+       let x=   convertToCSV(bookingdata)
+      console.log(x,"XXXX")
+          // const csvData = convertToCSV(bookingData);
     
-    console.log(keys);
+    // console.log(keys);
         })
         .catch((error) => {
           // Handle errors, e.g., show an error message
@@ -64,6 +73,17 @@ export default function Booking() {
       const BookingDetails = () =>{
         window.location.href ='/booking-details'
       }
+      const convertToCSV = (data) => {
+        const headers = Object.keys(data[0]).join(',') + '\n';
+      
+        const rows = bookingdata.map((row) =>
+          Object.values(row)
+            .map((value) => (Array.isArray(value) ? `"${value.join(', ')}"` : `"${value}"`))
+            .join(',')
+        ).join('\n');
+      
+        return headers + rows;
+      };
   return (
     <>
       <div className='sec_ttl'>
@@ -71,7 +91,7 @@ export default function Booking() {
       </div>
       <div className='textRight tableActionBtns'>
         <CsvDownloadButton
-          data={bookingdata}
+          data={bookingdata.map(({ _id, __v, ...rest }) => rest)}
           filename="bookingdata.csv" className='btn btn_info btn_sm'>Export CSV</CsvDownloadButton>
         </div>
       <TableContainer component={Paper}>
@@ -89,7 +109,7 @@ export default function Booking() {
               <StyledTableCell align="right">Design Image</StyledTableCell>
               <StyledTableCell align="right">Available Location</StyledTableCell>
               <StyledTableCell align="right">Preferred Location</StyledTableCell>
-              <StyledTableCell align="right">Action</StyledTableCell>
+              {/* <StyledTableCell align="right">Action</StyledTableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -125,11 +145,17 @@ export default function Booking() {
                 {/* <StyledTableCell align="right">{row.radioList =="B"?"Yes":"No"}</StyledTableCell> */}
                 <StyledTableCell align="right"> {row.image && (
                   <img
-                    src={`http://localhost:4000/${row.image}`}
+                    // src={`http://localhost:4000/${row.image}`}
+                    src={`https://signtruckapi.signtruck.ca/${row.image}`}
                     alt={`Design for ${row.name}`}
                     style={{ width: '50px', height: '50px' }} />
                 )}</StyledTableCell>
-                <StyledTableCell align="right">{row.preferredLocation}</StyledTableCell>
+                <StyledTableCell align="right">       {JSON.parse(row.availablelocation).map((loc, index) => (
+        <span key={loc}>
+            {loc}
+            {index < JSON.parse(row.availablelocation).length - 1 && ','}{' '}
+        </span>
+    ))}</StyledTableCell>
                 <StyledTableCell align="right">{row.location}</StyledTableCell>
                 {/* <StyledTableCell align="right"><button type='button' className='actionBtn btn_info' 
     onClick={() => BookingDetails(row.id)}  

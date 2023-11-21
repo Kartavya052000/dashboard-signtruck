@@ -39,7 +39,12 @@ const Login = () => {
 
     try {
       // Make a POST request to your login API endpoint
-      const response = await axios.post('http://localhost:4000/login', {
+      // const apiUrl = 
+      // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/login';
+      const apiUrl = 'https://signtruckapi.signtruck.ca/login';
+
+
+      const response = await axios.post(apiUrl, {
         email,
         password,
       });

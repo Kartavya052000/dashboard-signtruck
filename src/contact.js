@@ -38,8 +38,11 @@ export default function Contact() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        const apiUrl = 'http://localhost:4000/get-contact';
+        // const apiUrl = 'http://localhost:4000/get-contact';
         // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-contact';
+        const apiUrl = 'https://signtruckapi.signtruck.ca/get-contact';
+
+
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data

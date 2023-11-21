@@ -54,15 +54,17 @@ export default function Guest() {
 
     useEffect(() => {
         // Define the API endpoint URL
-        const apiUrl = 'http://localhost:4000/get-guest-data';
-        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/users';
+        // const apiUrl = 'http://localhost:4000/get-guest-data';
+        // const apiUrl = 'http://160.153.49.101/get-guest-data';
+        const apiUrl = 'https://signtruckapi.signtruck.ca/get-guest-data';
+
+        // const apiUrl = 'https://busy-pink-dalmatian-ring.cyclic.app/get-guest-data';
         Axios.get(apiUrl)
         .then((response) => {
           // Handle the successful response and update the state with the data
           console.log(response.data,"DATA");
           setRows(response.data.bookings);
-    //       const keys = Object.keys(response.data.bookings[0]);
-    
+    //       const keys = Object.keys(response.data.bookings[0]); 
     // console.log(keys);
         })
         .catch((error) => {

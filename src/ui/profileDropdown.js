@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 const ProfileDropdown = () => {
     const [isActive, setActive] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSignOut = () => {
         // Perform sign-out logic here
 
         // After sign-out, navigate to the home route
-        navigate('/');
+        // navigate('/');
+        window.location.href="/"
     };
 
     return (
