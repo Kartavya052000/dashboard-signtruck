@@ -27,7 +27,7 @@ const ProfileDropdown = () => {
                 </div>
                 <div className={isActive ? 'menu active' : 'menu'}>
                     <ul>
-                        <li><a href="#"><i className='fa fa-user'></i>&nbsp;Profile</a></li>
+                        {/* <li><a href="#"><i className='fa fa-user'></i>&nbsp;Profile</a></li> */}
                         <li><a onClick={handleSignOut}><i className='fa fa-sign-out'></i>&nbsp;Sign Out</a></li>
                     </ul>
                 </div>

@@ -154,7 +154,7 @@
     top: calc(100% + 24px);
     right: 0;
     width: 200px;
-    min-height: 90px;
+    max-height: 90px;
     background: #fff;
     border-radius: 6px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
