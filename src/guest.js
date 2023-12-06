@@ -79,7 +79,7 @@ export default function Guest() {
   return (
     <>
       <div className='sec_ttl'>
-        <h2>Users</h2>
+        <h2>Guest-Users</h2>
       </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
