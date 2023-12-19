@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import adminImg from '../assets/images/usericon.png';
 import { useNavigate } from 'react-router-dom';
-
+import { Router } from 'react-router-dom';
 const ProfileDropdown = () => {
     const [isActive, setActive] = useState(false);
-    // const navigate = useNavigate();
 
     const handleSignOut = () => {
         // Perform sign-out logic here

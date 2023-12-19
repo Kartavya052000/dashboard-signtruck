@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Axios from 'axios';
-
-
+import Swal from 'sweetalert2';
 
 export default function Navigation() {
     // const [nav, setNav] = useState([]); // Declare and initialize state within the function component
@@ -13,6 +12,20 @@ export default function Navigation() {
         nav5: "",
         nav6: "",
     })
+    const showSuccessAlert = (icon,mess) => {
+        Swal.fire({
+          icon: icon,
+          title: mess,
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown',
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp',
+          },
+          showConfirmButton: false,
+          timer: 2000, // Adjust the time the alert stays visible (in milliseconds)
+        });
+      };
     useEffect(() => {
         // Define the API endpoint URL
         // const apiUrl = 'http://localhost:4000/get-navbar';
@@ -45,6 +58,7 @@ export default function Navigation() {
         // Make a GET request to fetch data
 
     }, [])
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -58,24 +72,29 @@ export default function Navigation() {
             });
 
             const { success, message } = response.data;
-            if (success) {
 
-                //   handleSuccess(message);
-                setTimeout(() => {
-                    // navigate("/");
-                }, 1000);
-            } else {
-                console.log(response.data, "SSSS");
-                // alert(message);
-                //   handleError(message);
-            }
+                  handleSuccess(message);
+               
+            // } else {
+            //     console.log(response.data, "SSSS");
+            //     // alert(message);
+            //       handleError(message);
+            // }
 
         } catch (error) {
-            //   handleError();
+              handleError(error.message);
 
             console.error('API request failed', error);
         }
     };
+    const handleError = (err) =>{
+    showSuccessAlert("error","Internal Server Error")
+
+    };
+    const handleSuccess = (msg) =>{
+        showSuccessAlert("success","Navigation Updated Successfully")
+    }
+
     return (
         <>
             <div className='sec_ttl'>

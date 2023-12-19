@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-
+  const [cookies, setCookie] = useCookies(['admintoken']); // Get and set the "admintoken" cookie
+const navigate=useNavigate()
   const validateForm = () => {
     let isValid = true;
 
@@ -54,7 +56,16 @@ const Login = () => {
 
       // Redirect to "/users" after successful login
     //   history.push('/users');
-    window.location.href='/users'
+          setCookie('admintoken', response.data.token, { path: '/' });
+
+      setCookie("admintoken", response.data.token, { path: "/" });
+    if(response.data.role = "Admin"){
+      // window.location.href='/users'
+      navigate("/users")
+    }else{
+      alert("Only admin can login")
+      return;
+    }
 
       // Reset the form after successful login
       setEmail('');

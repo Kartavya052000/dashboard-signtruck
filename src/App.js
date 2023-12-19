@@ -17,7 +17,6 @@ import BookingDetails from './bookingdetails';
 function App() {
 
   const loginacess = window.location.pathname;
-  console.log(loginacess,"LLLL");
   return (
     <div className='App'>
       <Router>

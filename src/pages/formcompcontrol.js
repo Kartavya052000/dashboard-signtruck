@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import Swal from 'sweetalert2';
 
 const FormComponentsControl = () => {
   const initialFields = {
@@ -88,7 +89,20 @@ const FormComponentsControl = () => {
     }));
   };
 
- 
+  const showSuccessAlert = (icon,mess) => {
+    Swal.fire({
+      icon: icon,
+      title: mess,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp',
+      },
+      showConfirmButton: false,
+      timer: 2000, // Adjust the time the alert stays visible (in milliseconds)
+    });
+  };
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -107,9 +121,12 @@ const FormComponentsControl = () => {
       .then((response) => {
         console.log('Response from server:', response.data);
         // Handle the successful response if needed
+        handleSuccess("Fields Updated Successfully");
+
       })
       .catch((error) => {
         // Handle errors, e.g., show an error message
+        handleError("Internal Server Error")
         console.error('Error updating data:', error);
       });
 
@@ -133,7 +150,13 @@ const FormComponentsControl = () => {
       return updatedMode;
     });
   };
+  const handleError = (err) =>{
+    showSuccessAlert("error",err)
 
+    };
+    const handleSuccess = (msg) =>{
+        showSuccessAlert("success",msg)
+    }
   return (
     <>
       <div className='manageForm_sec'>
