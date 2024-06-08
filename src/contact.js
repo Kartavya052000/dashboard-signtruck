@@ -100,7 +100,7 @@ export default function Contact() {
         console.log(token,"TOKENNN")
         
         // const apiUrl = `http://localhost:4000/contacts/${id}`; // Assuming your delete route is '/bookings/:bookingId'
-        const apiUrl = 'https://signtruckapi.signtruck.ca/contacts/${id}';
+        const apiUrl = `https://signtruckapi.signtruck.ca/contacts/${id}`;
 
         Axios.delete(apiUrl, {
           headers: {
@@ -125,7 +125,7 @@ export default function Contact() {
     
         };
         const handleSuccess = (msg) =>{
-            showSuccessAlert("success","Navigation Updated Successfully")
+            showSuccessAlert("success",msg)
         }
     
   return (

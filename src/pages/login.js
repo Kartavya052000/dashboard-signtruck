@@ -56,12 +56,11 @@ const navigate=useNavigate()
 
       // Redirect to "/users" after successful login
     //   history.push('/users');
-          setCookie('admintoken', response.data.token, { path: '/' });
 
-      setCookie("admintoken", response.data.token, { path: "/" });
-    if(response.data.role = "Admin"){
-      // window.location.href='/users'
-      navigate("/users")
+      setCookie("admintoken", response.data.token);
+    if(response.data.role == "Admin"){
+      window.location.href='/users'
+      // navigate("/users")
     }else{
       alert("Only admin can login")
       return;
