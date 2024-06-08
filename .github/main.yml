@@ -1,0 +1,35 @@
+name: kenzie Frontend Live
+
+on:
+  push:
+    branches: [ "admin_dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.13.1]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm run build 
+      env:
+        CI: false
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@main
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_DEPLOY_KEY_LIVE }}
+          REMOTE_HOST: ${{ secrets.HOST_LIVE }}
+          REMOTE_USER: ${{ secrets.USER }}
+          TARGET: /var/www/html/dashboard/
+          SOURCE: "build/*"
